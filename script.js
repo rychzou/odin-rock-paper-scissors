@@ -26,21 +26,20 @@ function playGame() {
     // play 5 rounds loops
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Enter rock, paper, or scissors:");
-    }
-    let computerSelection = getComputerChoice();
-    let result = playRound(playerSelection, computerSelection);
+        let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
 
-    if (result.includes("Win")) {
-        playerScore++;
-    } else if (result.includes("Lose")) {
-        computerScore++;
+        if (result.includes("win")) {
+            playerScore++;
+        } else if (result.includes("lose")) {
+            computerScore++;
+        }
     }
-}
-
-if (playerScore > computerScore) {
-    console.log("Congrats! You win " + playerScore + " to " + computerScore);
-} else {
-    console.log("Sorry, computer wins " + computerScore + " to " + playerScore);
+    if (playerScore > computerScore) {
+        console.log("Congrats! You win " + playerScore + " to " + computerScore);
+    } else {
+        console.log("Sorry, computer wins " + computerScore + " to " + playerScore);
+    }
 }
 
 playGame()
